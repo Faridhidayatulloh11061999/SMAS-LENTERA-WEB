@@ -1,0 +1,172 @@
+/* 🌟 RESET DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f3f6fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* 🌈 HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #00264d, #004080);
+    color: white;
+    padding: 15px 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    animation: slideDownHeader 1s ease;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 55px;
+    margin-right: 12px;
+    transition: transform 0.4s ease;
+}
+
+header .logo img:hover {
+    transform: rotate(10deg) scale(1.15);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    letter-spacing: 0.5px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* 🌀 HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(0, 38, 77, 0.7), rgba(0, 38, 77, 0.7)), url('sekolah-bg.jpg') center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(rgba(255,255,255,0.1), transparent);
+    animation: moveLight 6s linear infinite;
+}
+
+.hero-text {
+    z-index: 1;
+    max-width: 700px;
+    padding: 20px;
+    animation: floatText 4s ease-in-out infinite alternate;
+}
+
+.hero h2 {
+    font-size: 3.2em;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+    animation: slideDown 1s ease;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    animation: fadeIn 2s ease;
+}
+
+.btn {
+    background: linear-gradient(90deg, #ffcc00, #ffd633);
+    color: #003366;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(255, 204, 0, 0.4);
+}
+
+.btn:hover {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 5px 18px rgba(255, 204, 0, 0.6);
+}
+
+/* ✨ ANIMASI DASAR */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideDown {
+    from {transform: translateY(-40px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes floatText {
+    from {transform: translateY(0);}
+    to {transform: translateY(-15px);}
+}
+
+@keyframes moveLight {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes slideDownHeader {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0);}
+}
+
+/* 💎 PROFIL */
+/* Profil */ .profil { padding: 60px; text-align: center; background: white; } .profil h2 { color: #003366; margin-bottom: 20px; } .profil-container { display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap; } .card { background: #f0f4f8; padding: 20px; border-radius: 15px; width: 300px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); } /* Guru */ .guru { background-color: #eef3f9; padding: 60px; text-align: center; } .guru-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; } .guru-card { background: white; padding: 20px; border-radius: 15px; width: 200px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); } .guru-card img { width: 100%; border-radius: 10px; } /* Berita */ .berita { padding: 60px; text-align: center; background-color: white; } .berita-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 30px; } .berita-item { background: #f0f4f8; width: 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); } .berita-item img { width: 100%; height: px; object-fit: cover; } .berita-item h4 { margin: 10px; color: #003366; } .berita-item p { margin: 10px; font-size: 0.95em; } /* Kontak */ .kontak { padding: 40px; text-align: center; background-color: #003366; color: white; } footer { background-color: #001a33; color: white; text-align: center; padding: 15px; font-size: 0.9em; }
