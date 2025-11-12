@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMAS Lentera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f3f6fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* 🌈 HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #00264d, #004080);
+    color: white;
+    padding: 15px 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    animation: slideDownHeader 1s ease;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 55px;
+    margin-right: 12px;
+    transition: transform 0.4s ease;
+}
+
+header .logo img:hover {
+    transform: rotate(10deg) scale(1.15);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    letter-spacing: 0.5px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+        /* HERO SECTION */
+        /* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/Studi kasus 4/Foto/sekolah.jpeg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    animation: fadeIn 2s ease;
+}
+
+.hero-text {
+    max-width: 750px;
+    background: rgba(0, 51, 102, 0.6);
+    padding: 40px 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* ✨ TEKS UTAMA POP-UP */
+.hero-text h2 {
+    font-size: 3.2em;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #ffcc00, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    animation: popUpText 1.8s ease forwards;
+}
+
+/* ✨ Paragraf muncul halus */
+.hero-text p {
+    font-size: 1.2em;
+    color: #f5f5f5;
+    opacity: 0;
+    animation: fadeInUp 2.3s ease forwards;
+    animation-delay: 0.8s;
+}
+
+/* ✨ Tombol */
+.btn {
+    background: linear-gradient(90deg, #ffcc00, #ffd633);
+    color: #003366;
+    padding: 12px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+    opacity: 0;
+    animation: fadeInUp 2.5s ease forwards;
+    animation-delay: 1.2s;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 25px rgba(255, 204, 0, 0.8);
+}
+
+/* 🔥 Animasi Pop Up & Fade In */
+@keyframes popUpText {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+        /* SECTIONS */
+        section {
+            padding: 100px 80px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 40px;
+            font-size: 2em;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #ffcc00;
+            display: block;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* PROFIL */
+        .profil p {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .profil-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* GURU */
+        .guru-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .guru-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .guru-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #003366;
+        }
+
+        .guru-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* BERITA */
+        .berita { padding: 60px; text-align: center; background-color: white; } .berita-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 30px; } .berita-item { background: #f0f4f8; width: 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); } .berita-item img { width: 100%; height: px; object-fit: cover; } .berita-item h4 { margin: 10px; color: #003366; } .berita-item p { margin: 10px; font-size: 0.95em; } /* Kontak */ .kontak { padding: 40px; text-align: center; background-color: #003366; color: white; } footer { background-color: #001a33; color: white; text-align: center; padding: 15px; font-size: 0.9em; }
+
+        /* KONTAK */
+        .kontak {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #002244;
+            color: #ccc;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeUp {
+            from {opacity: 0; transform: translateY(40px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo animate__animated animate__fadeInLeft">
+            <img src="/Studi kasus 4/Foto/Logo_lentera_bagus-removebg-preview.png" alt="Logo Sekolah">
+            <h1>SMAS LENTERA</h1>
+        </div>
+        <nav class="animate__animated animate__fadeInRight">
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#guru">Guru</a></li>
+                <li><a href="#berita">Berita</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="beranda" class="hero">
+        <div class="hero-text">
+            <h2>Selamat Datang di SMAS Lentera</h2>
+            <p>Mewujudkan generasi unggul, berkarakter, dan berprestasi.</p>
+            <a href="#profil" class="btn">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
+
+    <!-- Profil -->
+    <section id="profil" class="profil">
+        <h2>Profil Sekolah</h2>
+        <p>SMAS Lentera berkomitmen membentuk siswa yang cerdas, berakhlak mulia, dan siap menghadapi tantangan global.</p>
+        <div class="profil-container">
+            <div class="card">
+                <h3>Visi</h3>
+                <p>Menjadi lembaga pendidikan unggul dalam prestasi, karakter, dan teknologi.</p>
+            </div>
+            <div class="card">
+                <h3>Misi</h3>
+                <ul style="text-align:left; margin-left:20px;">
+                    <li>Meningkatkan kualitas pembelajaran berbasis digital.</li>
+                    <li>Menanamkan nilai moral dan spiritual pada peserta didik.</li>
+                    <li>Mendorong kreativitas dan inovasi siswa.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guru -->
+    <section id="guru" class="guru">
+        <h2>Tenaga Pengajar</h2>
+        <div class="guru-container">
+            <div class="guru-card">
+                <img src="/Studi kasus 4/Foto/bu devi.png" alt="Guru">
+                <h4>DEVI SEPTIANI, S.PD</h4>
+                <p>Guru Geografi</p>
+            </div>
+            <div class="guru-card">
+                <img src="/Studi kasus 4/Foto/WIWIN.png" alt="Guru">
+                <h4>WIWIN WIDYA NINGSIH, S.PD</h4>
+                <p>Guru Ekonomi</p>
+            </div>
+            <div class="guru-card">
+                <img src="/Studi kasus 4/Foto/ADITIA.png" alt="Guru">
+                <h4>MUHAMMAD ADITIA, S.PD</h4>
+                <p>Guru Fisika</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita -->
+    <section id="berita" class="berita">
+        <h2>Kegiatan SMAS Lentera</h2>
+        <div class="berita-container">
+            <article class="berita-item">
+                <img src="/Studi kasus 4/Foto/BULAN BAHASA.jpg" alt="Bulan Bahasa">
+                <h4>Bulan Bahasa</h4>
+                <p>Bulan Bahasa bukan sekadar perayaan kata, tetapi momentum untuk menumbuhkan cinta terhadap bahasa Indonesia, daerah, dan asing. Melalui lomba dan kegiatan literasi, siswa belajar berbahasa dengan santun dan bangga berbahasa Indonesia.</p>
+            </article>
+            <article class="berita-item">
+                <img src="/Studi kasus 4/Foto/KEGIATAN P5.jpg" alt="Kegiatan P5">
+                <h4>Projek P5</h4>
+                <p>Projek Penguatan Profil Pelajar Pancasila (P5) membentuk siswa yang berkarakter, mandiri, kreatif, dan peduli lingkungan melalui pengalaman nyata yang bermakna.</p>
+            </article>
+            <article class="berita-item">
+                <img src="/Studi kasus 4/Foto/PI.jpg" alt="Pendalaman Iman">
+                <h4>Pendalaman Iman</h4>
+                <p>Kegiatan Pendalaman Iman mempererat hubungan siswa dengan Tuhan, menumbuhkan rasa syukur dan kasih, serta membentuk karakter berakhlak mulia dan jujur dalam kehidupan sehari-hari.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="kontak">
+        <h2>Hubungi Kami</h2>
+        <p>Email: info@smaslentera.sch.id | Telepon: 0812-1215-7692</p>
+        <p>Alamat: Jl. Rumah Kayu Goen, Ciakar, Panongan, Kab. Tangerang, Banten 15710</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SMAS Lentera. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
